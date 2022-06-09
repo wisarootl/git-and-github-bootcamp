@@ -94,9 +94,12 @@ git config --global user.email "[email]" # set
 
 ```mermaid
 flowchart LR
+A(Working Directory) -->|git add| B(Staging Area)
+B -->|git commit| C(Repository)
+```
 
-A[Hard] -->|Text| B(Round)
-B --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
+```plantuml
+@startuml
+alice->bob:hello
+@enduml
 ```
