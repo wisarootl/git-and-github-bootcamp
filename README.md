@@ -4,7 +4,7 @@ This is my note for [The Git & Github Bootcamp](https://www.udemy.com/course/git
 
 # Course Covers
 
-**Git Core :** **`Intro to Git`**, [**`Installation`**](#installation--setup), [**`Command Line`**](#command-line), [**`Git Basics`**](#git-basics), [**`Committing in Detail`**](#committing-in-detail), **`Branching`**, **`Merging`**
+**Git Core :** **`Intro to Git`**, [**`Installation`**](#installation--setup), [**`Command Line`**](#command-line), [**`Git Basics`**](#git-basics), [**`Committing in Detail`**](#committing-in-detail), [**`Branching`**](#branching), **`Merging`**
 
 **Next Level Git :** **`Diffing`**, **`Stashing`**, **`Undoing Changes`**
 
@@ -122,4 +122,12 @@ git config --global core.editor "code --wait"
 
 - `git log --oneline`
 
----
+- `git commit -amend` : change last commit
+
+# Branching
+
+- `git branch` : list all branches
+
+- `git branch <branch-name>` : create new branch
+
+- `git switch <branch-name>` : switch branch
