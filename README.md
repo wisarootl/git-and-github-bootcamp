@@ -4,7 +4,7 @@ This is my note for [The Git & Github Bootcamp](https://www.udemy.com/course/git
 
 # Course Covers
 
-**Git Core :** **`Intro to Git`**, [**`Installation`**](#installation--setup), [**`Command Line`**](#command-line), [**`Git Basics`**](#git-basics), **`Committing in Detail`**, **`Branching`**, **`Merging`**
+**Git Core :** **`Intro to Git`**, [**`Installation`**](#installation--setup), [**`Command Line`**](#command-line), [**`Git Basics`**](#git-basics), [**`Committing in Detail`**](#committing-in-detail), **`Branching`**, **`Merging`**
 
 **Next Level Git :** **`Diffing`**, **`Stashing`**, **`Undoing Changes`**
 
@@ -90,7 +90,13 @@ git config --global user.email "[email]" # set
 
 - `git add file1 file2`
 
+- `git add .`
+
 - Working Directory
+
+- Staging Area : Something intermediate between working directory abd repo
+
+- Repo (Repository) : workspace / `.git` folder
 
 ```mermaid
 flowchart LR
@@ -98,8 +104,10 @@ A(Working Directory) -->|git add| B(Staging Area)
 B -->|git commit| C(Repository)
 ```
 
-```plantuml
-@startuml
-alice->bob:hello
-@enduml
-```
+- `git commit -m "message"`
+
+- `git log`
+
+# Committing in Detail
+
+- Atomic Commit : 1 commit, 1 thing
