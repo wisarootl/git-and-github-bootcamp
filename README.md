@@ -111,3 +111,9 @@ B -->|git commit| C(Repository)
 # Committing in Detail
 
 - Atomic Commit : 1 commit, 1 thing
+
+- Use present tense in Git Commit message (It is only convention in Git Docs)
+
+```
+git config --global core.editor "code --wait"
+```
