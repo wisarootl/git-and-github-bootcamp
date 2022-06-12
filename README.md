@@ -114,6 +114,12 @@ B -->|git commit| C(Repository)
 
 - Use present tense in Git Commit message (It is only convention in Git Docs)
 
+- Change default text editor for `git commit` without message
+
 ```
 git config --global core.editor "code --wait"
 ```
+
+- `git log --oneline`
+
+---
