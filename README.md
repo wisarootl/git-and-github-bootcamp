@@ -8,9 +8,9 @@ This is my note for [The Git & Github Bootcamp](https://www.udemy.com/course/git
 
 **Next Level Git :** [**`Diffing`**](#diffing), [**`Stashing`**](#stashing), [**`Undoing Changes`**](#undoing-changes--time-traveling)
 
-**Github and Collaboration Core :** [**`Github Basics`**](#github-basics), [**`Fetching & Pulling`**](#fetching--pulling), [**`Github Odds & Ends`**](#github-odds--ends), **`Collaborative Workflows`**
+**Github and Collaboration Core :** [**`Github Basics`**](#github-basics), [**`Fetching & Pulling`**](#fetching--pulling), [**`Github Odds & Ends`**](#github-odds--ends), [**`Collaborative Workflows`**](#collaborative-workflows)
 
-**The Other Parts :** **`Rebasing`**, **`Interactive Rebasing`**, **`Git Tags`**, **`Git Behind The Scenes`**, **`Reflogs`**, **`Custom Aliases`**
+**The Other Parts :** [**`Rebasing`**](#rebasing), [**`Interactive Rebasing`**](#interactive-rebasing), **`Git Tags`**, **`Git Behind The Scenes`**, **`Reflogs`**, **`Custom Aliases`**
 
 # Installation & Setup
 
@@ -304,3 +304,61 @@ D -->|git pull| A
 <p align="center"><img src="./asset/08-git-fetch-pull.png" alt="drawing" style="width:400px;"/> <img src="./asset/10-git-fetch-pull.png" alt="drawing" style="width:400px;"/></p>
 
 # Github Odds & Ends
+
+- Github Gists : are a simple way to share code snippets and useful fragments with others. Gists are much easier to create, but offer far fewer features than a typical Github repository.
+
+- Github pages : public webpages that are hosted and published via Github. Github Pages is a hosting service for static webpages, so it does not support server-side code like Python, Ruby, or Node. Just HTML/CSS/JS!
+
+# Collaborative Workflows
+
+## Centralized Workflow
+
+- Everyone Works On Master/Main
+- The Most Basic Workflow Possible
+- Problem: lots of conflicts, incomplete code in master.
+
+## Feature-Branch Workflow
+
+- Treat master/main branch as the official project history
+- all new development should be done on separate branches!
+- Multiple teammates can collaborate on a single feature and share code back and forth without polluting the master/main branch
+- Master/main branch won't contain broken code (or at least, it won't unless someone messes up)
+- **Pull Request** : are a feature built in to products like Github & Bitbucket. They are not native to Git itself
+
+## Fork & Clone Workflow
+
+- Forking : allow us to create personal copies of other peoples' repositories. We call those copies a "fork" of the original.
+  - forking is not a Git feature. The ability to fork is implemented by Github.
+
+<p align="center"><img src="./asset/11-fork-clone.png" alt="drawing" style="width:600px;"/></p>
+
+1. I fork the original project repo on Github
+2. I clone my fork to my local machine
+3. I add a remote pointing to the original project repo. This remote is often named upstream.
+4. I make changes and add/commit on a feature branch on my local machine
+5. I push up my new feature branch to my forked repo (usually called origin)
+6. I open a pull request to the original project repo containing the new work on my forked repo.
+7. Hopefully the pull request is accepted and my changes are merged in!
+
+# Rebasing
+
+- Rebase :
+
+  - as an alternative to merging
+  - as a cleanup tool for git history
+
+- move `<side-branch>` to the head of `<main-branch>`
+  - all commits in `<side-branch>` are recreate (commit hashes are changed)
+
+```
+git switch <side-branch>
+git rebase <main-branch>
+```
+
+<p align="center"><img src="./asset/12-rebase.png" alt="drawing" style="width:400px;"/></p>
+
+- Never rebase commit that already shared with others.
+
+- `git rebase --continue` : conflict happen after rebase and fixed the conflict before continue rebase
+
+# Interactive Rebasing
