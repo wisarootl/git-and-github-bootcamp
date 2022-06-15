@@ -10,7 +10,7 @@ This is my note for [The Git & Github Bootcamp](https://www.udemy.com/course/git
 
 **Github and Collaboration Core :** [**`Github Basics`**](#github-basics), [**`Fetching & Pulling`**](#fetching--pulling), [**`Github Odds & Ends`**](#github-odds--ends), [**`Collaborative Workflows`**](#collaborative-workflows)
 
-**The Other Parts :** [**`Rebasing`**](#rebasing), [**`Interactive Rebasing`**](#interactive-rebasing), **`Git Tags`**, **`Git Behind The Scenes`**, **`Reflogs`**, **`Custom Aliases`**
+**The Other Parts :** [**`Rebasing`**](#rebasing), [**`Interactive Rebasing`**](#interactive-rebasing), [**`Git Tags`**](#git-tags), **`Git Behind The Scenes`**, **`Reflogs`**, **`Custom Aliases`**
 
 # Installation & Setup
 
@@ -345,7 +345,7 @@ D -->|git pull| A
 - Rebase :
 
   - as an alternative to merging
-  - as a cleanup tool for git history
+  - as a cleanup tool for git history (interactive rebase)
 
 - move `<side-branch>` to the head of `<main-branch>`
   - all commits in `<side-branch>` are recreate (commit hashes are changed)
@@ -362,3 +362,80 @@ git rebase <main-branch>
 - `git rebase --continue` : conflict happen after rebase and fixed the conflict before continue rebase
 
 # Interactive Rebasing
+
+- rewrite, delete, rename, reorder commits using `git rebase` (clean commit history)
+
+- should rebase only working feature branch before sharing.
+
+- should not rebase shared commit!!
+
+- `git rebase -i HEAD~4`
+
+- common commands for rebase
+  - pick - use the commit
+  - reword - use the commit, but edit the commit message
+  - edit - use commit, but stop for amending
+  - fixup - (combine) use commit contents but meld it into previous commit and discard the commit message.
+  - drop - remove commit
+
+# Git Tags
+
+- pointer to specific commit.
+- most often used to mark version releases in projects (v4.1.0, v4.1.1, etc.)
+- Think of tags as branch references that do NOT CHANGE. Once a tag is created, it always refers to the same commit. It's just a label for a commit.
+
+- 2 types
+  1. lightweight tags : only name/label
+  2. annotated tags : store extra meta data including the author's name and email, the date, and a tagging message (like a commit message)
+
+## Semantic Versioning
+
+- Major.Minor.Patch (e.g., 2.4.1)
+
+- Initial Release (1.0.0)
+
+- Patch Release (1.0.1) :
+
+  - Patch releases normally do not contain new features or significant changes. - They typically signify bug fixes and other changes that do not impact how the code is used
+
+- Minor Release (1.1.0) :
+
+  - Minor releases signify that new features or functionality have been added, but the project is still **backwards compatible**. No breaking changes.
+  - The new functionality is optional and should not force users to rewrite their own code.
+
+- Major Release (2.0.0) :
+
+  - Major releases signify significant changes that is no longer backwards compatible.
+  - Features may be removed or changed substantially.
+
+- Document : [semver.org](https://semver.org/)
+
+## Git Tags Commands
+
+- `git tag` : list all tags
+
+- `git tag -l "*beta*"` : search tags
+
+- `git checkout <tag>` e.g. `git checkout v17.0.0` : go to `<tag>`
+
+- `git diff v17.0.0 v17.0.1`
+
+- `git tag <tagname>` (lightweight tag) : tag HEAD
+
+- `git tag -a <tagname>` (annotated tag) : tag HEAD
+
+- `git show <tagname>` : show tag information
+
+- `git tag <tagname> <commit>` : tagging previous commits
+
+- `git tag -f <tagname>` or `git tag -f <tagname> <commit>` : force tag
+
+  - tag name must be unique. in case, it is not unique, git will return error that tag exists. and `-f` will force that tag to move to the commit
+
+- `git tag -d <tagname>` : delete tag
+
+- `git push --tags` : push tags
+
+  - normally `git push` not push tags.
+
+- `git push <remote> <tag>` : push specific tags to remote
