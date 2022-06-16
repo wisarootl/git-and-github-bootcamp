@@ -10,7 +10,7 @@ This is my note for [The Git & Github Bootcamp](https://www.udemy.com/course/git
 
 **Github and Collaboration Core :** [**`Github Basics`**](#github-basics), [**`Fetching & Pulling`**](#fetching--pulling), [**`Github Odds & Ends`**](#github-odds--ends), [**`Collaborative Workflows`**](#collaborative-workflows)
 
-**The Other Parts :** [**`Rebasing`**](#rebasing), [**`Interactive Rebasing`**](#interactive-rebasing), [**`Git Tags`**](#git-tags), [**`Git Behind The Scenes`**](#git-behind-the-scenes), [**`Reflogs`**](#reflogs), **`Custom Aliases`**
+**The Other Parts :** [**`Rebasing`**](#rebasing), [**`Interactive Rebasing`**](#interactive-rebasing), [**`Git Tags`**](#git-tags), [**`Git Behind The Scenes`**](#git-behind-the-scenes), [**`Reflogs`**](#reflogs), [**`Custom Aliases`**](#custom-aliases)
 
 # Installation & Setup
 
@@ -64,7 +64,7 @@ git config --global init.defaultBranch main # set
 
 - `subl` : Open sublime text (Windows). follow config below first.
 
-  - add code below in file `C:\Users\Titta\.bash_profile`
+  - add code below in file `C:\Users\<username>\.bash_profile`
 
   - `alias subl="/c/Program\ Files/Sublime\ Text/sublime_text.exe"`
 
@@ -456,3 +456,38 @@ git rebase <main-branch>
 - please see original slides [here](./asset/git_behind_the_scenes.pdf)
 
 # Reflogs
+
+- Reflog : Reference logs
+
+- `git reflog show HEAD` : show logs of head
+
+- `git reflog show <branch-name>`
+
+- `git checkout HEAD@{2}` : go to specific head log
+
+- `git reflog master@{one.week.ago}`
+
+- `git checkout bugfix@{2.days.ago}`
+
+- `git diff main@{0} main@{yesterday}`
+
+# Custom Aliases
+
+- Assign those alias in `~/.gitconfig` or `C:\Users\<username>\.gitconfig` (global config file)
+
+```
+[alias]
+	s = status
+	l = log
+  cm = commit -m
+```
+
+- `git config --global alias.l log`
+
+- useful existing alias online
+
+```
+[alias]
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+```
