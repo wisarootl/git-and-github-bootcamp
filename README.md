@@ -10,7 +10,7 @@ This is my note for [The Git & Github Bootcamp](https://www.udemy.com/course/git
 
 **Github and Collaboration Core :** [**`Github Basics`**](#github-basics), [**`Fetching & Pulling`**](#fetching--pulling), [**`Github Odds & Ends`**](#github-odds--ends), [**`Collaborative Workflows`**](#collaborative-workflows)
 
-**The Other Parts :** [**`Rebasing`**](#rebasing), [**`Interactive Rebasing`**](#interactive-rebasing), [**`Git Tags`**](#git-tags), **`Git Behind The Scenes`**, **`Reflogs`**, **`Custom Aliases`**
+**The Other Parts :** [**`Rebasing`**](#rebasing), [**`Interactive Rebasing`**](#interactive-rebasing), [**`Git Tags`**](#git-tags), [**`Git Behind The Scenes`**](#git-behind-the-scenes), [**`Reflogs`**](#reflogs), **`Custom Aliases`**
 
 # Installation & Setup
 
@@ -439,3 +439,20 @@ git rebase <main-branch>
   - normally `git push` not push tags.
 
 - `git push <remote> <tag>` : push specific tags to remote
+
+# Git Behind The Scenes
+
+- `git config --local` : local config file
+
+- Git Object
+
+  - blob : binary large object (content in file)
+  - tree : folder
+  - commit
+  - annotated tag
+
+- nothing much important here!
+
+- please see original slides [here](./asset/git_behind_the_scenes.pdf)
+
+# Reflogs
