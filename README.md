@@ -484,6 +484,8 @@ git rebase <main-branch>
 
 - `git config --global alias.l log`
 
+  - make `git l` == `git log`
+
 - useful existing alias online
 
 ```
