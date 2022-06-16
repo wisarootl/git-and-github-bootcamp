@@ -477,8 +477,8 @@ git rebase <main-branch>
 
 ```
 [alias]
-	s = status
-	l = log
+  s = status
+  l = log
   cm = commit -m
 ```
 
@@ -490,6 +490,6 @@ git rebase <main-branch>
 
 ```
 [alias]
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 ```
