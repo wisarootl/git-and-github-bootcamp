@@ -254,6 +254,8 @@ A --> C(git restore)
 
 - `git clone <url>` : download git repository to local machine
 
+- `git clone --branch <branchname> <remote-repo-url>` : clone specific branch
+
 - SSH keys : can connect github without identifying username and password
 
 - `git remote -v` : display list of remotes
